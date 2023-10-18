@@ -25,7 +25,7 @@ int longitud(const char *clrs)
 
     return length;
 }
-// antes de irme, hay que utilizar la variable modifiedcopy in el segundo while para que cada vez que se ejecute, el string sea diferente (con un caracter menos) hasta que solo quede 1.
+// hay que utilizar la variable modifiedcopy in el segundo while para que cada vez que se ejecute, el string sea diferente (con un caracter menos) hasta que solo quede 1.
 
 
 char triangle(const char *clrs)
