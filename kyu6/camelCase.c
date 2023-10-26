@@ -26,45 +26,40 @@ int mayus(const char *camelCase) {
 char* solution(const char *camelCase) {
     int i = 0;
     int k = 0;
+    int howlong = size(camelCase);
     int nummayus = mayus(camelCase);
-    char *result = (char *) malloc(nummayus + size(camelCase) + 1);
+
+    char *result = (char *) malloc(nummayus + howlong + 1);
  
-    while (nummayus != 0) {
-        while(camelCase[i] <= 65 || camelCase[i] >= 90) {
-            result[i] = camelCase[i];
+    while (nummayus+1 != 0) {
+        while(camelCase[i] < 65 || camelCase[i] > 90) {
+            result[k] = camelCase[i];
             i++;
-        }
-
-        k = i;
-
-        if(k == 0)
-            result[i] = camelCase[i];
-
-        else {
-            result[k] = ' ';
-            result[k+1] = camelCase[k];
             k++;
-
-            while(camelCase[k] <= 65 || camelCase[k] >= 90) {
-                result[k+1] = camelCase[k];
-                k++;
-            }
         }
         
+        if(k == 0) {
+            result[k] = camelCase[i];
+            k++;
+        }
+        
+        else {
+            result[k] = ' ';
+            k++;
+            result[k] = camelCase[i];
+            k++;
+        }
+
         i++;
         nummayus--;
     }
 
     result[k] = '\0';
-    
-    //if (nummayus == 0)
-        //return camelCase;
-
     return result;
 }
 
 int main() {
-    const char *camelCase = "TestTestTest";
+    const char *camelCase = "CamelCase";
     char *result = solution(camelCase);
 
     printf("Modified string:%s\n", result);
