@@ -25,19 +25,3 @@ int main() {
 
     return 0;
 }
-
-/*    double r = d/2.0;
-    printf("r: %f\n",r);
-    double x = 2*sqrt((2*r*h)-pow(h,2));
-    printf("x: %f\n",x);
-    double epsilon = 2*acos(1-(h/r));
-    printf("eps: %f\n",epsilon);
-    double as = (epsilon/2)*pow(r,2);
-    printf("as: %f\n",as);
-    double at = (x*(r-h))/2;
-    printf("at: %f\n",at);
-    double a = as-at;
-    printf("a: %f\n",a);
-    double l = vt/(M_PI*pow(r,2));
-    printf("l: %f\n",l);
-    double v = a*l;*/
